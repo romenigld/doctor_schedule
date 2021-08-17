@@ -5,7 +5,7 @@ config :doctor_schedule, DoctorSchedule.Repo,
   username: "postgres",
   password: "postgres",
   database: "doctor_schedule_dev",
-  hostname: "localhost",
+  hostname: "db",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
