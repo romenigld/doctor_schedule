@@ -12,6 +12,8 @@ services:
       - db
     links:
       - db
+    environment:
+      HOST_DB: "db"
   db:
     restart: always
     image: postgres:12

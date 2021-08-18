@@ -1,3 +1,2 @@
-mix ecto.drop
-mix ecto.setup
+mix ecto.reset
 exec mix phx.server
