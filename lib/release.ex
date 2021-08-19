@@ -1,4 +1,7 @@
 defmodule DoctorSchedule.Release do
+  @moduledoc """
+  Releases
+  """
   @app :doctor_schedule
 
   def migrate do
