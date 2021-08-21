@@ -37,7 +37,7 @@ jobs:
           path: deps
           key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
           restore-keys: ${{ runner.os }}-mix-
-      - name: Install dependencies
+      - name: deps
         run: mix deps.get
       - name: FORMAT
         run: mix format --check-formatted
