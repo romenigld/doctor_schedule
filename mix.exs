@@ -35,6 +35,7 @@ defmodule DoctorSchedule.MixProject do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
+        "coveralls.json": :test
       ]
     ]
   end
