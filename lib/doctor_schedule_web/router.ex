@@ -14,6 +14,7 @@ defmodule DoctorScheduleWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+
   # coveralls-ignore-stop
 
   scope "/", DoctorScheduleWeb do
@@ -44,5 +45,6 @@ defmodule DoctorScheduleWeb.Router do
       live_dashboard "/dashboard", metrics: DoctorScheduleWeb.Telemetry
     end
   end
+
   # coveralls-ignore-stop
 end

@@ -13,7 +13,8 @@ defmodule DoctorSchedule.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      description: "Projeto criação de Agendas - Module 4 GURU) by ElxPro Course - Doctor Schedule Application",
+      description:
+        "Projeto criação de Agendas - Module 4 GURU) by ElxPro Course - Doctor Schedule Application",
       source_url: @github_url,
       homepage_url: @github_url,
       files: ~w[mix.exs lib LICENSE.md README.md CHANGELOG.md],
