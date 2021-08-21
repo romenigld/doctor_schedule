@@ -1,4 +1,7 @@
 defmodule DoctorScheduleWeb.PageLive do
+  @moduledoc """
+  PageLive
+  """
   use DoctorScheduleWeb, :live_view
 
   @impl true
