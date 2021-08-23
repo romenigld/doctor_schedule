@@ -27,7 +27,7 @@ defmodule DoctorSchedule.Accounts.Entities.User do
       :role,
       :password,
       :password_confirmation
-    ], message: "CAN'T BE BLANK")
+    ], message: "can't be blank")
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/, message: "has invalid format please type @ valid e-mail")
     |> update_change(:email, &String.downcase/1)
