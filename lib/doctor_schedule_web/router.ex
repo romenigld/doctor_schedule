@@ -24,7 +24,7 @@ defmodule DoctorScheduleWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", DoctorScheduleWeb do
+  scope "/api", DoctorScheduleWeb.Api, as: :api do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit]
