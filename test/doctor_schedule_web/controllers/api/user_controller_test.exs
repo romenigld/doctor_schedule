@@ -53,7 +53,9 @@ defmodule DoctorScheduleWeb.Api.UserControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, user: user} do
-      conn = put(conn, Routes.api_user_path(conn, :update, user), user: UserFixture.invalid_user())
+      conn =
+        put(conn, Routes.api_user_path(conn, :update, user), user: UserFixture.invalid_user())
+
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
