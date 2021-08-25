@@ -27,6 +27,7 @@ defmodule DoctorScheduleWeb.Router do
   scope "/api", DoctorScheduleWeb.Api, as: :api do
     pipe_through :api
 
+    resources "/sessions", SessionController
     resources "/users", UserController, except: [:new, :edit]
   end
 
