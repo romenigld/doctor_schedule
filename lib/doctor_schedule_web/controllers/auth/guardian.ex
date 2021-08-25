@@ -2,8 +2,17 @@ defmodule DoctorScheduleWeb.Auth.Guardian do
   use Guardian, otp_app: :doctor_schedule
 
   alias DoctorSchedule.Accounts.Services.Session
+  alias DoctorSchedule.Accounts.Repositories.AccountRepository
 
   def subject_for_token(user, _claims), do: {:ok, to_string(user.id)}
+
+  def resource_from_claims(claims) do
+    user =
+      claims["sub"]
+      |> AccountRepository.get_user!()
+
+    {:ok, user}
+  end
 
   def authenticate(email, password) do
     case Session.authenticate(email, password) do
