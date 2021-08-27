@@ -33,6 +33,7 @@ defmodule DoctorScheduleWeb.Router do
     resources "/sessions", SessionController
     resources "/users", UserController, only: [:create]
   end
+
   scope "/api", DoctorScheduleWeb.Api, as: :api do
     pipe_through [:api, :auth]
     resources "/users", UserController, except: [:create]
