@@ -6,7 +6,6 @@ defmodule DoctorSchedule.Accounts.Repositories.SessionTest do
   alias DoctorSchedule.UserFixture
 
   describe "users" do
-
     def user_fixture(attrs \\ %{}) do
       {:ok, user} =
         attrs

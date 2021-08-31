@@ -23,12 +23,12 @@ defmodule DoctorScheduleWeb.Api.UserControllerTest do
       }
       |> AccountRepository.create_user()
 
-    {:ok, token, _}= encode_and_sign(user, %{}, token_type: :access)
+    {:ok, token, _} = encode_and_sign(user, %{}, token_type: :access)
 
     conn =
       conn
       |> put_req_header("accept", "application/json")
-      |> put_req_header("authorization", "bearer "<> token)
+      |> put_req_header("authorization", "bearer " <> token)
 
     {:ok, conn: conn}
   end

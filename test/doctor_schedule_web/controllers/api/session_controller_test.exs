@@ -22,12 +22,12 @@ defmodule DoctorScheduleWeb.Api.SessionControllerTest do
       }
       |> AccountRepository.create_user()
 
-    {:ok, token, _}= encode_and_sign(user, %{}, token_type: :access)
+    {:ok, token, _} = encode_and_sign(user, %{}, token_type: :access)
 
     conn =
       conn
       |> put_req_header("accept", "application/json")
-      |> put_req_header("authorization", "bearer "<> token)
+      |> put_req_header("authorization", "bearer " <> token)
 
     {:ok, conn: conn}
   end
@@ -37,9 +37,9 @@ defmodule DoctorScheduleWeb.Api.SessionControllerTest do
       conn =
         conn
         |> post(Routes.api_session_path(conn, :create), %{
-              email: "auth_test@email.com",
-              password: "some password_hash"
-           })
+          email: "auth_test@email.com",
+          password: "some password_hash"
+        })
 
       assert json_response(conn, 201)["user"]["email"] == "auth_test@email.com"
     end
@@ -48,9 +48,9 @@ defmodule DoctorScheduleWeb.Api.SessionControllerTest do
       conn =
         conn
         |> post(Routes.api_session_path(conn, :create), %{
-              email: "auth_test@email.com",
-              password: "not password_hash"
-           })
+          email: "auth_test@email.com",
+          password: "not password_hash"
+        })
 
       assert json_response(conn, 400) == %{"message" => "unauthorized"}
     end
