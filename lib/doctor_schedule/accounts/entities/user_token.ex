@@ -13,8 +13,8 @@ defmodule DoctorSchedule.Accounts.Entities.UserToken do
   end
 
   @doc false
-  def changeset(user_tokens, attrs \\ %{}) do
-    user_tokens
+  def changeset(user_token, attrs \\ %{}) do
+    user_token
     |> cast(attrs, [:token, :user_id])
     |> validate_required([:user_id])
   end
