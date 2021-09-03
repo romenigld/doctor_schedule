@@ -8,7 +8,9 @@ defmodule DoctorSchedule.Accounts.Services.ResetPasswordService do
     token
     |> TokenRepository.get_by_token()
     |> case do
-      nil -> {:error, "Token does not exist!"}
+      nil ->
+        {:error, "Token does not exist!"}
+
       user_token ->
         user_token
         |> validate_token()

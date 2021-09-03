@@ -1,7 +1,7 @@
 defmodule DoctorScheduleWeb.PageLiveTest do
   use DoctorScheduleWeb.ConnCase
 
-  import Phoenix.LiveViewTest
+  # import Phoenix.LiveViewTest
 
   test "disconnected and connected render", %{conn: _conn} do
     # {:ok, page_live, disconnected_html} = live(conn, "/")

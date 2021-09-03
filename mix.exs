@@ -79,7 +79,8 @@ defmodule DoctorSchedule.MixProject do
       {:argon2_elixir, "~> 2.4"},
       {:guardian, "~> 2.2"},
       {:bamboo, "~> 1.5"},
-      {:bamboo_smtp, "~> 3.0.0"}
+      {:bamboo_smtp, "~> 3.0.0"},
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 
