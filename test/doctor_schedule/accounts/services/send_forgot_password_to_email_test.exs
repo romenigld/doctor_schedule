@@ -28,7 +28,8 @@ defmodule DoctorSchedule.Accounts.Services.SendForgotPasswordToEmailTest do
     end
 
     test "execute/2 should reset password no success" do
-      assert {:error, "User does not exists"} == SendForgotPasswordToEmail.execute("incorrect_email@email.com")
+      assert {:error, "User does not exists"} ==
+               SendForgotPasswordToEmail.execute("incorrect_email@email.com")
     end
   end
 end
