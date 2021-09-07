@@ -26,4 +26,4 @@ config :doctor_schedule, DoctorScheduleWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
- config :doctor_schedule, DoctorScheduleWeb.Endpoint, server: true
+config :doctor_schedule, DoctorScheduleWeb.Endpoint, server: true
