@@ -1,7 +1,6 @@
 defmodule DoctorSchedule.Accounts.Services.ResetPasswordServiceTest do
   use DoctorSchedule.DataCase
 
-  alias DoctorSchedule.Accounts.Repositories.AccountRepository
   alias DoctorSchedule.Accounts.Repositories.TokenRepository
   alias DoctorSchedule.Accounts.Services.ResetPasswordService
   alias DoctorSchedule.UserFixture
@@ -9,17 +8,8 @@ defmodule DoctorSchedule.Accounts.Services.ResetPasswordServiceTest do
   import Mock
 
   describe "users" do
-    def user_fixture(attrs \\ %{}) do
-      {:ok, user} =
-        attrs
-        |> Enum.into(UserFixture.valid_user())
-        |> AccountRepository.create_user()
-
-      user
-    end
-
     test "execute/2 should reset password " do
-      user = user_fixture()
+      user = UserFixture.create_user()
       {:ok, token, _} = TokenRepository.generate(user.email)
 
       assert {:ok, "Password has updated!"} ==
@@ -30,7 +20,7 @@ defmodule DoctorSchedule.Accounts.Services.ResetPasswordServiceTest do
     end
 
     test "execute/2 should return error token expired" do
-      user = user_fixture()
+      user = UserFixture.create_user()
       {:ok, token, _} = TokenRepository.generate(user.email)
 
       now = DateTime.utc_now()
