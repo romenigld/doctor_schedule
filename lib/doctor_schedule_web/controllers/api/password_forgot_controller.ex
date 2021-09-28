@@ -1,9 +1,8 @@
 defmodule DoctorScheduleWeb.Api.PasswordForgotController do
   use DoctorScheduleWeb, :controller
+  action_fallback DoctorScheduleWeb.FallbackController
 
   alias DoctorSchedule.Accounts.Services.SendForgotPasswordToEmail
-
-  action_fallback DoctorScheduleWeb.FallbackController
 
   def create(conn, %{"email" => email}) do
     with {:ok, _user, _token, _email} <- SendForgotPasswordToEmail.execute(email) do
