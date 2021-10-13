@@ -46,7 +46,7 @@ defmodule DoctorSchedule.MixProject do
   def application do
     [
       mod: {DoctorSchedule.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :bamboo, :bamboo_smtp]
     ]
   end
 
